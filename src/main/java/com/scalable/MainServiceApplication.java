@@ -12,7 +12,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 public class MainServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(MainServiceApplication.class, args);
-        System.getenv().forEach((key, value) ->
-                log.info(key + " = " + value));
+//        System.getenv().forEach((key, value) -> log.info("{} = {}", key, value));
     }
 }

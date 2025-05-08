@@ -23,7 +23,7 @@ quoteService:
   host: ${QUOTE_SERVICE_HOST}
   port: ${QUOTE_SERVICE_PORT}
   endpoint:
-    getQuotesEndpoint: /getQuotes
+    getQuotesEndpoint: /api/quote/getQuotes
 
 userService:
   scheme: http

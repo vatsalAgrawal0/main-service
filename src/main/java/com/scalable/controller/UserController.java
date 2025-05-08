@@ -21,7 +21,6 @@ import java.util.Map;
 @RestController
 @RequestMapping
 public class UserController {
-    private final String JWT_TOKEN = "jwtToken";
     @Autowired
     private UserService userService;
     @Autowired
@@ -47,11 +46,8 @@ public class UserController {
 
         if (response.getStatusCode().is2xxSuccessful()) {
             session.setAttribute("userId", response.getBody().getUserId());
-            session.setAttribute(JWT_TOKEN, response.getBody().getToken());
+            session.setAttribute("jwtToken", response.getBody().getToken());
         }
-
-        log.info(response.getBody().getUserId());
-        log.info(response.getBody().getToken());
 
         return ResponseEntity
                 .status(response.getStatusCode())
@@ -61,7 +57,7 @@ public class UserController {
 
     @GetMapping("/profile")
     public ResponseEntity<String> profile(HttpSession session) throws JsonProcessingException {
-        ResponseEntity<UserDetailResponse> response = userService.getUserDetails(session.getAttribute(JWT_TOKEN).toString());
+        ResponseEntity<UserDetailResponse> response = userService.getUserDetails(session.getAttribute("jwtToken").toString());
 
         return ResponseEntity
                 .status(response.getStatusCode())

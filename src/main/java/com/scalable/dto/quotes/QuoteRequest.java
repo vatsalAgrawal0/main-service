@@ -5,5 +5,5 @@ import java.util.Map;
 
 @Data
 public class QuoteRequest {
-    private Map<String, Object> queryParams;
+    private Map<String, String> queryParams;
 }

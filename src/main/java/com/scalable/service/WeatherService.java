@@ -1,9 +1,7 @@
 package com.scalable.service;
 
 import com.scalable.config.MainConfig;
-import com.scalable.dto.user.UserDetailResponse;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpMethod;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -12,7 +10,9 @@ import com.scalable.dto.weather.WeatherResponse;
 
 @Service
 public class WeatherService {
+    @Autowired
     private MainConfig mainConfig;
+    @Autowired
     private RestTemplate restTemplate;
 
     public ResponseEntity<WeatherResponse> getWeatherForCity(String city) {

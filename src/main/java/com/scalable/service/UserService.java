@@ -7,7 +7,6 @@ import com.scalable.dto.user.UserLoginRequest;
 import com.scalable.dto.user.UserLoginResponse;
 import com.scalable.dto.user.RegisterUserRequest;
 import com.scalable.dto.user.RegisterUserResponse;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

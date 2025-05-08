@@ -1,10 +1,6 @@
 server:
   port: 8085
 
-restClient:
-  connectTimeout: 5000
-  readTimeout: 10000
-
 weatherService:
   scheme: http
   host: ${WEATHER_SERVICE_HOST}

@@ -12,5 +12,4 @@ public class MainConfig {
     private ReminderServiceConfig reminderService;
     private QuoteServiceConfig quoteService;
     private UserServiceConfig userService;
-    private RestTemplateConfig restClient;
 }

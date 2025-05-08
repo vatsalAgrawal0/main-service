@@ -19,7 +19,7 @@
   <properties>
     <java.version>23</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <start-class>com.scalable.MainServiceApplication</start-class>
+<!--    <start-class>com.scalable.MainServiceApplication</start-class>-->
   </properties>
 
   <dependencies>
@@ -40,11 +40,6 @@
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.httpcomponents.client5</groupId>
-      <artifactId>httpclient5</artifactId>
-      <version>5.3</version>
     </dependency>
   </dependencies>
 
@@ -73,28 +68,6 @@
             </exclude>
           </excludes>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>3.6.0</version>
-        <executions>
-          <execution>
-            <id>with-dependencies</id>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-            <configuration>
-              <createDependencyReducedPom>false</createDependencyReducedPom>
-              <transformers>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.scalable.MainServiceApplication</mainClass> <!-- Replace with your main class -->
-                </transformer>
-              </transformers>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>

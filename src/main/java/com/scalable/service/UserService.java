@@ -7,6 +7,8 @@ import com.scalable.dto.user.UserLoginRequest;
 import com.scalable.dto.user.UserLoginResponse;
 import com.scalable.dto.user.RegisterUserRequest;
 import com.scalable.dto.user.RegisterUserResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -18,7 +20,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @Service
 public class UserService {
+    @Autowired
     private MainConfig mainConfig;
+    @Autowired
     private RestTemplate restTemplate;
 
     public ResponseEntity<RegisterUserResponse> registerNewUser(RegisterUserRequest registerUserRequest) throws JsonProcessingException {

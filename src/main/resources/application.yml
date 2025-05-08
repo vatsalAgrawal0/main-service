@@ -1,0 +1,39 @@
+server:
+  port: 8085
+
+restClient:
+  connectTimeout: 5000
+  readTimeout: 10000
+
+weatherService:
+  scheme: http
+  host: ${WEATHER_SERVICE_HOST}
+  port: ${WEATHER_SERVICE_PORT}
+  endpoint:
+    getWeatherEndpoint: /api/v1/weather/%s
+
+reminderService:
+  scheme: http
+  host: ${REMINDER_SERVICE_HOST}
+  port: ${REMINDER_SERVICE_PORT}
+  endpoint:
+    createReminderEndpoint: /reminder
+    getAllUserReminderEndpoint: /reminders
+    getReminderById: /reminder
+    deleteReminder: /reminder
+
+quoteService:
+  scheme: http
+  host: ${QUOTE_SERVICE_HOST}
+  port: ${QUOTE_SERVICE_PORT}
+  endpoint:
+    getQuotesEndpoint: /getQuotes
+
+userService:
+  scheme: http
+  host: ${USER_SERVICE_HOST}
+  port: ${USER_SERVICE_PORT}
+  endpoint:
+    registerEndpoint: /api/register
+    loginEndpoint: /api/login
+    userDetailsEndpoint: /api/user

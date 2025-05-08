@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: main-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: main-service
+  template:
+    metadata:
+      labels:
+        app: main-service
+    spec:
+      containers:
+        - name: main-service
+          image: main-service:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8085
+          env:
+            - name: WEATHER_SERVICE_HOST
+              value: "weather-service"
+            - name: WEATHER_SERVICE_PORT
+              value: "8080"
+            - name: REMINDER_SERVICE_HOST
+              value: "reminder-service"
+            - name: REMINDER_SERVICE_PORT
+              value: "5000"
+            - name: QUOTE_SERVICE_HOST
+              value: "quote-service"
+            - name: QUOTE_SERVICE_PORT
+              value: "5000"
+            - name: USER_SERVICE_HOST
+              value: "user-service"
+            - name: USER_SERVICE_PORT
+              value: "5000"
